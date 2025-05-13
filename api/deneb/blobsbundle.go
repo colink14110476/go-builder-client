@@ -16,15 +16,14 @@ package deneb
 import (
 	"fmt"
 
-	"github.com/attestantio/go-eth2-client/spec/deneb"
 	"github.com/goccy/go-yaml"
 )
 
 // BlobsBundle is the structure used to store the blobs bundle.
 type BlobsBundle struct {
-	Commitments []deneb.KZGCommitment `ssz-max:"4096" ssz-size:"?,48"`
-	Proofs      []deneb.KZGProof      `ssz-max:"4096" ssz-size:"?,48"`
-	Blobs       []deneb.Blob          `ssz-max:"4096" ssz-size:"?,131072"`
+	Commitments [][48]byte     `ssz-max:"4096" ssz-size:"?,48"`
+	Proofs      [][48]byte     `ssz-max:"4096" ssz-size:"?,48"`
+	Blobs       [][131072]byte `ssz-max:"4096" ssz-size:"?,131072"`
 }
 
 // String returns a string version of the structure.

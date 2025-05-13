@@ -26,7 +26,7 @@ type BidTrace struct {
 	ProposerFeeRecipient bellatrix.ExecutionAddress `ssz-size:"20"`
 	GasLimit             uint64
 	GasUsed              uint64
-	Value                *uint256.Int `ssz-size:"32"`
+	Value                [32]byte `ssz-size:"32"`
 }
 
 // bidTraceJSON is the spec representation of the struct.
